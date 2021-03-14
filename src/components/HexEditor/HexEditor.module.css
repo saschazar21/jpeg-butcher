@@ -1,0 +1,22 @@
+.editor {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(16, 4ch);
+  font-size: 0.75em;
+  text-align: center;
+}
+
+.input {
+  position: absolute;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+  top: 0;
+  bottom: 0;
+}

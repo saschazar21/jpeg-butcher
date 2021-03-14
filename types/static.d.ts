@@ -57,3 +57,8 @@ declare module '*.png' {
 }
 
 /* CUSTOM: ADD YOUR OWN HERE */
+interface ImportMeta {
+  env: {
+    [key: string]: string;
+  };
+}

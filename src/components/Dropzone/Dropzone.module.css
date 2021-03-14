@@ -1,0 +1,28 @@
+.dropzone {
+  transition: border-color var(--transition-duration) ease-out;
+  display: grid;
+  place-content: center;
+  border-radius: var(--border-radius);
+  border: 0.5rem dashed hsl(var(--color-bg-offset), 0.5);
+  width: 100%;
+  height: 480px;
+  max-width: 640px;
+  max-height: 100%;
+}
+
+.dropzone:hover {
+  cursor: pointer;
+}
+
+.active {
+  border-color: hsl(var(--color-bg-offset));
+}
+
+.error {
+  border-color: hsl(var(--color-error));
+  color: hsl(var(--color-error));
+}
+
+.input {
+  display: none;
+}

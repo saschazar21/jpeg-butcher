@@ -3,23 +3,43 @@
     "start": "snowpack dev",
     "build": "snowpack build",
     "test": "web-test-runner \"src/**/*.test.tsx\"",
-    "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "lint": "prettier --check \"src/**/*.{js,jsx}\""
-  },
-  "dependencies": {
-    "preact": "^10.0.0"
+    "format": "prettier --check --write \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:js": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "lint": "yarn format && yarn lint:css && yarn lint:js"
   },
   "devDependencies": {
     "@prefresh/snowpack": "^3.0.0",
     "@snowpack/plugin-dotenv": "^2.0.5",
+    "@snowpack/plugin-postcss": "^1.1.0",
     "@snowpack/plugin-typescript": "^1.2.0",
     "@snowpack/web-test-runner-plugin": "^0.2.0",
     "@testing-library/preact": "^2.0.0",
     "@types/chai": "^4.2.14",
+    "@types/classnames": "^2.2.11",
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
     "@web/test-runner": "^0.12.0",
     "chai": "^4.2.0",
+    "cssnano": "^4.1.10",
+    "eslint": "^7.21.0",
+    "eslint-config-preact": "^1.1.3",
+    "eslint-config-prettier": "^8.1.0",
+    "postcss": "^8.2.6",
+    "postcss-cli": "^8.3.1",
+    "postcss-normalize": "^9.0.0",
+    "postcss-preset-env": "^6.7.0",
     "prettier": "^2.0.5",
+    "sanitize": "^2.1.0",
     "snowpack": "^3.0.1",
-    "typescript": "^4.0.3"
+    "stylelint": "^13.11.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-prettier": "^1.2.0",
+    "typescript": "^4.2.2"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "preact": "^10.5.12",
+    "storeon": "^3.1.4"
   }
 }

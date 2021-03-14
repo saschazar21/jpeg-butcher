@@ -1,0 +1,51 @@
+@keyframes ignite {
+  from {
+    background-color: hsl(var(--color-primary-offset), 0.9);
+  }
+
+  to {
+    background-color: hsl(var(--color-bg-offset), 0.75);
+  }
+}
+
+.byte {
+  display: inline-block;
+  line-height: 3;
+}
+
+.byte::selection {
+  background: transparent;
+}
+
+.editorByte {
+  position: relative;
+  color: hsl(var(--color-primary));
+}
+
+.editorByte:nth-child(2n) {
+  color: hsl(var(--color-primary-offset));
+}
+
+.editorByte:hover {
+  background-color: hsl(var(--color-bg-offset), 0.5);
+}
+
+.editorByte:nth-child(16n + 1):after {
+  content: attr(data-offset);
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: calc(100% + 1ch);
+  text-align: right;
+  color: hsl(var(--color-light-offset), 0.75);
+}
+
+.active {
+  animation: var(--noop, ignite) 300ms ease-out;
+  background-color: hsl(var(--color-bg-offset), 0.75);
+}
+
+.invalid {
+  background-color: hsl(var(--color-error), 0.75);
+}

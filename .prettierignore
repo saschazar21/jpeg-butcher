@@ -1,0 +1,4 @@
+.snowpack
+build
+coverage
+node_modules

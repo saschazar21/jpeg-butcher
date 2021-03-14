@@ -1,0 +1,103 @@
+import { h, Fragment, JSX } from 'preact';
+import { useRef, useState } from 'preact/hooks';
+import classnames from 'classnames';
+import { useStoreon } from 'storeon/preact';
+
+import styles from 'components/Dropzone/Dropzone.module.css';
+import type { JPEGEvents, JPEGState } from 'store';
+import readFile from 'utils/filereader';
+
+const Dropzone = (): JSX.Element => {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [active, setActive] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
+  const { dispatch } = useStoreon<JPEGState, JPEGEvents>('original');
+
+  const handleChange = async (e: Event) => {
+    e.preventDefault();
+    if ((e.target as HTMLInputElement)?.files) {
+      try {
+        const { files } = e.target as HTMLInputElement;
+        const data = await readFile(files as FileList);
+        dispatch('set', data);
+      } catch (e) {
+        setError(e);
+      }
+    }
+  };
+
+  const handleClick = (e: MouseEvent) => {
+    e.preventDefault();
+    setError(null);
+    inputRef.current?.click();
+  };
+
+  const handleDragEnd = () => setActive(false);
+  const handleDragEnter = () => setActive(true);
+  const handleDragLeave = () => setActive(false);
+  const handleDragOver = (e: DragEvent) => {
+    setError(null);
+    e.preventDefault();
+    if (e?.dataTransfer) {
+      e.dataTransfer.dropEffect = 'copy';
+    }
+  };
+
+  const handleDragStart = (e: DragEvent) => {
+    if (e?.dataTransfer) {
+      e.dataTransfer.dropEffect = 'copy';
+    }
+  };
+
+  const handleDrop = async (e: DragEvent) => {
+    e.preventDefault();
+    setActive(false);
+    if (e?.dataTransfer) {
+      const { files } = e.dataTransfer;
+
+      try {
+        const data = await readFile(files);
+        dispatch('set', data);
+      } catch (e) {
+        setError(e);
+      }
+    }
+  };
+
+  const className = classnames(styles.dropzone, {
+    [styles.active]: active,
+    [styles.error]: error,
+  });
+  return (
+    <Fragment>
+      <div
+        className={className}
+        onClick={handleClick}
+        onDragEnd={handleDragEnd}
+        onDragEnter={handleDragEnter}
+        onDragLeave={handleDragLeave}
+        onDragOver={handleDragOver}
+        onDragStart={handleDragStart}
+        onDrop={handleDrop}
+      >
+        {error ? (
+          <span>{error.message}</span>
+        ) : (
+          <span>
+            Click to open file, or
+            <br />
+            drag &amp; drop a JPEG image...
+          </span>
+        )}
+      </div>
+      <input
+        type="file"
+        ref={inputRef}
+        className={styles.input}
+        onChange={handleChange}
+      />
+    </Fragment>
+  );
+};
+
+export default Dropzone;
