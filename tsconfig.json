@@ -3,6 +3,7 @@
   "compilerOptions": {
     "module": "esnext",
     "target": "esnext",
+    "lib": ["WebWorker", "ESNext"],
     "moduleResolution": "node",
     "jsx": "preserve",
     "jsxFactory": "h",
