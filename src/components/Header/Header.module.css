@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header > :not(:first-child) {
+  display: block;
+  margin-left: 1rem;
+  color: hsl(var(--color-bg-offset));
+}

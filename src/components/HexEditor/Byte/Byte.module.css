@@ -27,7 +27,7 @@
 }
 
 .editorByte:hover {
-  background-color: hsl(var(--color-bg-offset), 0.5);
+  background-color: hsl(var(--color-bg-offset), 0.25);
 }
 
 .editorByte:nth-child(16n + 1):after {
@@ -38,12 +38,12 @@
   top: 0;
   right: calc(100% + 1ch);
   text-align: right;
-  color: hsl(var(--color-light-offset), 0.75);
+  color: hsl(var(--color-bg-offset));
 }
 
 .active {
   animation: var(--noop, ignite) 300ms ease-out;
-  background-color: hsl(var(--color-bg-offset), 0.75);
+  background-color: hsl(var(--color-bg-offset), 0.333);
 }
 
 .invalid {

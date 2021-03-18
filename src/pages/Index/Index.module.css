@@ -1,5 +1,5 @@
 .hex {
-  display: flex;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: 1fr auto;
   gap: 1rem;
 }

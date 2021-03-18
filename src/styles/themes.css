@@ -1,7 +1,7 @@
 :root {
   --color-dark: 75, 12%, 7%;
   --color-light: 12, 11%, 91%;
-  --color-light-offset: 28, 11%, 71%;
+  --color-light-offset: 28, 11%, 31%;
   --color-primary: 153, 53%, 16%;
   --color-primary-offset: 132, 37%, 33%;
   --color-error: 10, 83%, 46%;
@@ -15,7 +15,7 @@
   :root {
     --color-text: var(--color-light);
     --color-bg: var(--color-dark);
-    --color-bg-offset: 75, 12%, 22%;
+    --color-bg-offset: 75, 12%, 47%;
     --color-primary: 132, 37%, 68%;
     --color-primary-offset: 153, 23%, 46%;
     --color-error: 10, 87%, 68%;

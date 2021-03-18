@@ -4,6 +4,8 @@ import { useStoreon } from 'storeon/preact';
 
 import type { JPEGEvents, JPEGState } from 'store';
 
+import styles from 'components/ImageViewer/ImageViewer.module.css';
+
 export interface Dimensions {
   height: number;
   width: number;
@@ -22,7 +24,7 @@ const ImageViewer = (): JSX.Element => {
 
   useEffect(() => {
     const worker = new Worker(
-      new URL('../../worker/convert-image-to-base64.js', import.meta.url),
+      new URL('../../worker/extract-dimensions.js', import.meta.url),
       {
         name: 'convert-image-to-base64-worker',
         type: import.meta.env.mode === 'development' ? 'module' : 'classic',
@@ -56,7 +58,7 @@ const ImageViewer = (): JSX.Element => {
     img.addEventListener('load', () => ctx?.drawImage(img, 0, 0));
   }, [canvasRef, dimensions, modified]);
 
-  return <canvas ref={canvasRef} />;
+  return <canvas ref={canvasRef} className={styles.canvas} />;
 };
 
 export default ImageViewer;

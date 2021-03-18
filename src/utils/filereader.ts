@@ -1,6 +1,6 @@
 export const SUPPORTED_FILETYPES = ['image/jpeg'];
 
-const fileReader = async (files: FileList): Promise<Uint8Array> =>
+const fileReader = async (files: FileList): Promise<[Uint8Array, string]> =>
   new Promise((resolve, reject) => {
     if (!files?.length) {
       return reject(new Error('No files transmitted!'));
@@ -30,7 +30,7 @@ const fileReader = async (files: FileList): Promise<Uint8Array> =>
     );
 
     worker.onmessage = ({ data }: MessageEvent<Uint8Array>) => {
-      resolve(new Uint8Array(data as ArrayBuffer));
+      resolve([new Uint8Array(data as ArrayBuffer), file.name]);
       return worker.terminate();
     };
 
