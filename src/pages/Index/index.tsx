@@ -4,7 +4,7 @@ import { useStoreon } from 'storeon/preact';
 import Dropzone from 'components/Dropzone';
 import HexEditor from 'components/HexEditor';
 import HexViewer from 'components/HexViewer';
-import ImageViewer from 'components/ImageViewer';
+import Image from 'components/Image';
 import type { JPEGEvents, JPEGState } from 'store';
 
 import styles from 'pages/Index/Index.module.css';
@@ -16,7 +16,7 @@ const Index = (): JSX.Element => {
     <section className={styles.hex}>
       <HexEditor />
       {/* <HexViewer /> */}
-      <ImageViewer />
+      <Image />
     </section>
   ) : (
     <Dropzone />
