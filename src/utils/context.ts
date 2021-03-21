@@ -3,6 +3,7 @@ import { createContext } from 'preact';
 export interface ImageDimensions {
   height: number;
   width: number;
+  url?: string;
   x: number;
   y: number;
 }

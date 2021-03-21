@@ -18,7 +18,10 @@ const Image = (): JSX.Element => {
     x: 0,
     y: 0,
   });
-  const { original } = useStoreon<JPEGState, JPEGEvents>('original');
+  const { modified, original } = useStoreon<JPEGState, JPEGEvents>(
+    'modified',
+    'original',
+  );
 
   useEffect(() => {
     const worker = new Worker(
@@ -38,6 +41,12 @@ const Image = (): JSX.Element => {
 
     worker.postMessage(original);
   }, [original]);
+
+  useEffect(() => {
+    const blob = new Blob([modified], { type: 'image/jpeg' });
+    const url = URL.createObjectURL(blob);
+    setDimensions((d: ImageDimensions) => ({ ...d, url }));
+  }, [modified]);
 
   const handleMouseEnter = () => setIsOver(true);
   const handleMouseMove = (e: MouseEvent) => {

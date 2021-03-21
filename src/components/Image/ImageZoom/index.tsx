@@ -1,27 +1,15 @@
 import { h, JSX } from 'preact';
-import { useContext, useMemo } from 'preact/hooks';
-import { useStoreon } from 'storeon/preact';
+import { useContext } from 'preact/hooks';
 
-import type { JPEGEvents, JPEGState } from 'store';
 import { ImageContext } from 'utils/context';
 
 const ImageZoom = ({ hidden }: { hidden: boolean }): JSX.Element | null => {
-  const { width, height, x, y } = useContext(ImageContext);
-  const { modified } = useStoreon<JPEGState, JPEGEvents>('modified');
+  const { width, height, url, x, y } = useContext(ImageContext);
 
-  const src = useMemo(() => {
-    if (!modified.length) {
-      return;
-    }
-
-    const blob = new Blob([modified], { type: 'image/jpeg' });
-    return URL.createObjectURL(blob);
-  }, [modified]);
-
-  return src && src.length > 0 ? (
+  return url && url.length > 0 ? (
     <img
       aria-hidden="true"
-      src={src}
+      src={url}
       width={width}
       height={height}
       hidden={hidden}

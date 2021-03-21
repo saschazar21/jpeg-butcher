@@ -8,4 +8,20 @@
   display: block;
   margin-left: 1rem;
   color: hsl(var(--color-bg-offset));
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header > a {
+  transition: var(--noop, background-color) 300ms ease-in,
+    var(--noop, color) 300ms ease-in;
+  display: inline-block;
+  border: 2px dashed hsl(var(--color-bg-offset), 0.5);
+  border-radius: 4px;
+  padding: 1ch 2ch;
+}
+
+.header > a:hover {
+  background-color: hsl(var(--color-bg-offset));
+  color: hsl(var(--color-bg));
 }
