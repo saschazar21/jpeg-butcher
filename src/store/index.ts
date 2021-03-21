@@ -2,17 +2,17 @@ import { createStoreon, StoreonStore } from 'storeon';
 
 import { isProd } from 'utils/helpers';
 
-export interface JPEGState {
+export type JPEGState = {
   name: string;
   original: Uint8Array;
   modified: Uint8Array;
-}
+};
 
-export interface JPEGEvents {
+export type JPEGEvents = {
   reset: undefined;
   set: [Uint8Array, string];
   update: Uint8Array;
-}
+};
 
 const jpeg = (store: StoreonStore<JPEGState, JPEGEvents>) => {
   store.on('@init', () => ({

@@ -4,9 +4,9 @@ import classnames from 'classnames';
 import foreignStyles from 'components/HexEditor/Byte/Byte.module.css';
 import styles from 'components/HexViewer/Byte/Byte.module.css';
 
-export interface ByteProps {
+export type ByteProps = {
   value: number;
-}
+};
 
 const Byte = ({ value }: ByteProps): JSX.Element => {
   const className = classnames(foreignStyles.byte, styles.viewerByte);

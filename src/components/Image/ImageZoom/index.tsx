@@ -3,7 +3,11 @@ import { useContext } from 'preact/hooks';
 
 import { ImageContext } from 'utils/context';
 
-const ImageZoom = ({ hidden }: { hidden: boolean }): JSX.Element | null => {
+export type ImageZoomProps = {
+  hidden: boolean;
+};
+
+const ImageZoom = ({ hidden }: ImageZoomProps): JSX.Element | null => {
   const { width, height, url, x, y } = useContext(ImageContext);
 
   return url && url.length > 0 ? (

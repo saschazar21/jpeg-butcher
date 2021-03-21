@@ -6,7 +6,7 @@ import { Selection } from 'components/HexEditor';
 
 import styles from 'components/HexEditor/Byte/Byte.module.css';
 
-export interface ByteProps {
+export type ByteProps = {
   active: boolean;
   children: string;
   className?: string;
@@ -16,7 +16,7 @@ export interface ByteProps {
   onHover: (offset: number) => void;
   // eslint-disable-next-line no-unused-vars
   onPressed: (pressed: boolean, offset: number) => void;
-}
+};
 
 const Byte = ({
   active,
