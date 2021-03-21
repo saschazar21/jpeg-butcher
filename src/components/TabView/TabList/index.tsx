@@ -1,6 +1,6 @@
 import { h, JSX } from 'preact';
 
-import type Tab from 'components/TabList/Tab';
+import type Tab from 'components/TabView/TabList/Tab';
 
 export type TabListProps = {
   children: typeof Tab | typeof Tab[];
