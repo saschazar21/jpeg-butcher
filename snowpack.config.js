@@ -1,3 +1,5 @@
+const isProd = process.env.NODE_ENV === 'production';
+
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   alias: {
@@ -24,9 +26,13 @@ module.exports = {
   optimize: {
     /* Example: Bundle your final build: */
     // "bundle": true,
+    minify: isProd,
+    preload: isProd,
+    sourcemap: isProd ? false : 'inline',
+    treeshake: isProd,
   },
   packageOptions: {
-    source: process.env.NODE_ENV === 'production' ? 'remote' : 'local',
+    source: isProd ? 'remote' : 'local',
   },
   devOptions: {
     /* ... */
