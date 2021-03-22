@@ -21,7 +21,9 @@
   padding: 1ch 2ch;
 }
 
-.header > a:hover {
+.header > a:hover,
+.header > a:focus {
   background-color: hsl(var(--color-bg-offset));
   color: hsl(var(--color-bg));
+  outline: none;
 }

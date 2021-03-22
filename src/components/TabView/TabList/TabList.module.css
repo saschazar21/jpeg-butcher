@@ -1,0 +1,4 @@
+.tablist {
+  border-bottom: 2px solid hsl(var(--color-primary-offset));
+  margin-bottom: 1rem;
+}

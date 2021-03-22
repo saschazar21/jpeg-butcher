@@ -1,13 +1,19 @@
-import { h, JSX } from 'preact';
+import { h, JSX, VNode } from 'preact';
 
-import type Tab from 'components/TabView/TabList/Tab';
+import type { TabProps } from 'components/TabView/TabList/Tab';
+
+import styles from 'components/TabView/TabList/TabList.module.css';
 
 export type TabListProps = {
-  children: typeof Tab | typeof Tab[];
+  children: VNode<TabProps> | VNode<TabProps>[];
 };
 
 const TabList = ({ children }: TabListProps): JSX.Element => {
-  return <nav role="tablist">{children}</nav>;
+  return (
+    <div className={styles.tablist} role="tablist">
+      {children}
+    </div>
+  );
 };
 
 export default TabList;

@@ -1,0 +1,25 @@
+.tab {
+  transition: var(--noop, background-color) 300ms ease-in,
+    var(--noop, color) 300ms ease-in;
+  border: none;
+  padding: 1ch 2ch;
+  background-color: hsl(var(--color-bg-offset), 0.25);
+  color: hsl(var(--color-text));
+  font-weight: bold;
+  font-family: inherit;
+}
+
+.tab:hover {
+  background-color: hsl(var(--color-bg-offset), 0.333);
+  cursor: default;
+}
+
+.tab:focus {
+  background-color: hsl(var(--color-bg-offset), 0.5);
+  outline: none;
+}
+
+.tab[aria-selected='true'] {
+  background-color: hsl(var(--color-primary-offset));
+  color: hsl(var(--color-bg));
+}

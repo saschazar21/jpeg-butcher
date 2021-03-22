@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "param-case": "^3.0.4",
     "preact": "^10.5.12",
     "storeon": "^3.1.4"
   }
