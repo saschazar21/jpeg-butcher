@@ -15,6 +15,7 @@
       //     "*": [".snowpack/types/*"]
       // More info: https://www.snowpack.dev/guides/streaming-imports
       "*": [".snowpack/types/*"],
+      "assets/*": ["src/assets/*"],
       "components/*": ["src/components/*"],
       "pages": ["src/pages"],
       "pages/*": ["src/pages/*"],

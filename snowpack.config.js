@@ -3,11 +3,14 @@ const isProd = process.env.NODE_ENV === 'production';
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   alias: {
+    assets: './src/assets',
     components: './src/components',
     pages: './src/pages',
     styles: './src/styles',
     store: './src/store',
     utils: './src/utils',
+    react: 'preact/compat',
+    'react-dom': 'preact/compat',
   },
   mount: {
     public: { url: '/', static: true },
@@ -16,6 +19,7 @@ module.exports = {
   plugins: [
     '@snowpack/plugin-dotenv',
     '@snowpack/plugin-postcss',
+    'snowpack-svgr-plugin',
     '@snowpack/plugin-typescript',
     '@prefresh/snowpack',
   ],

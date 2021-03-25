@@ -3,6 +3,8 @@ import { useContext } from 'preact/hooks';
 
 import { TabContext } from 'components/TabView';
 
+import styles from 'components/TabView/TabPanel/TabPanel.module.css';
+
 export type TabPanelProps = {
   children: ComponentChildren;
   id: string;
@@ -14,6 +16,7 @@ const TabPanel = ({ children, id }: TabPanelProps): JSX.Element => {
 
   return (
     <div
+      className={styles.panel}
       id={`${id}-panel`}
       role="tabpanel"
       aria-labelledby={id}

@@ -1,5 +1,10 @@
 /* Use this file to declare any custom file extensions for importing */
 /* Use this folder to also add/extend a package d.ts file, if needed. */
+declare module '*.svgr.svg' {
+  import type { FunctionalComponent } from 'preact';
+  const ref: FunctionalComponent<{ className?: string }>;
+  export default ref;
+}
 
 /* CSS MODULES */
 declare module '*.module.css' {

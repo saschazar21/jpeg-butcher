@@ -4,6 +4,8 @@ import { useStoreon } from 'storeon/preact';
 
 import type { JPEGEvents, JPEGState } from 'store';
 
+import DownloadIcon from 'assets/icons/download.svgr.svg';
+
 import styles from 'components/Header/Header.module.css';
 
 const Header = (): JSX.Element => {
@@ -43,6 +45,7 @@ const Header = (): JSX.Element => {
             type="image/jpeg"
           >
             {name}
+            <DownloadIcon className={styles.download} />
           </a>
         </Fragment>
       )}

@@ -1,4 +1,6 @@
 .header {
+  --border-width: 2px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,9 +18,11 @@
   transition: var(--noop, background-color) 300ms ease-in,
     var(--noop, color) 300ms ease-in;
   display: inline-block;
-  border: 2px dashed hsl(var(--color-bg-offset), 0.5);
+  position: relative;
+  border: var(--border-width) dashed hsl(var(--color-bg-offset), 0.5);
   border-radius: 4px;
   padding: 1ch 2ch;
+  margin: 1rem;
 }
 
 .header > a:hover,
@@ -26,4 +30,20 @@
   background-color: hsl(var(--color-bg-offset));
   color: hsl(var(--color-bg));
   outline: none;
+}
+
+.download {
+  display: block;
+  position: absolute;
+  border: var(--border-width) solid hsl(var(--color-bg-offset), 0.5);
+  border-radius: 9999px;
+  padding: 0.5ch;
+  height: 2rem;
+  width: 2rem;
+  top: 0;
+  right: 0;
+  background-color: hsl(var(--color-bg));
+  color: hsl(var(--color-bg-offset));
+  overflow: hidden;
+  transform: translateX(50%) translateY(-50%);
 }
