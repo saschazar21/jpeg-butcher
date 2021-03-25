@@ -16,8 +16,8 @@ const Index = (): JSX.Element => {
 
   const elements: VNode<{ 'data-title': string }>[] = [
     <HexEditor data-title="Editor" />,
-    <HexViewer data-title="Text" />,
     <Image data-title="Image Preview" />,
+    <HexViewer data-title="Text" />,
   ];
 
   return original.length ? (
