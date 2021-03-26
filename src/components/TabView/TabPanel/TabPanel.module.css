@@ -1,3 +1,17 @@
+@keyframes from-left {
+  from {
+    transform: translateY(32px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .panel {
+  animation: var(--noop, from-left) 300ms ease-in;
   height: 100%;
+  width: 100%;
 }

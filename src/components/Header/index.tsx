@@ -40,12 +40,13 @@ const Header = (): JSX.Element => {
           <span>/</span>
           <a
             alt="Download your butchered result as JPEG image"
+            className={styles.downloadlink}
             download={download}
             href={href}
             type="image/jpeg"
           >
+            <DownloadIcon className={styles.downloadicon} />
             {name}
-            <DownloadIcon className={styles.download} />
           </a>
         </Fragment>
       )}

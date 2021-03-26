@@ -12,7 +12,7 @@ import styles from 'pages/Index/Index.module.css';
 
 const Index = (): JSX.Element => {
   const { original } = useStoreon<JPEGState, JPEGEvents>('original');
-  const mediaQuery = window.matchMedia('(min-width: 768px)');
+  const mediaQuery = window.matchMedia('(min-width: 1200px)');
 
   const elements: VNode<{ 'data-title': string }>[] = [
     <HexEditor data-title="Editor" />,

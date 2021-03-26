@@ -9,6 +9,10 @@
   font-family: inherit;
 }
 
+.tab:not(:first-child) {
+  margin-left: 2px;
+}
+
 .tab:hover {
   background-color: hsl(var(--color-bg-offset), 0.333);
   cursor: default;
