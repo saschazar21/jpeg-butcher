@@ -21,6 +21,10 @@
   font-weight: bold;
 }
 
+.separator {
+  text-align: right;
+}
+
 .downloadlink {
   transition: var(--noop, background-color) 300ms ease-in,
     var(--noop, color) 300ms ease-in;

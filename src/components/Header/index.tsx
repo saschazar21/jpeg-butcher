@@ -37,7 +37,7 @@ const Header = (): JSX.Element => {
       <h1>JPEG Butcher</h1>
       {name?.length > 0 && (
         <Fragment>
-          <span>/</span>
+          <span className={styles.separator}>/</span>
           <a
             alt="Download your butchered result as JPEG image"
             className={styles.downloadlink}
