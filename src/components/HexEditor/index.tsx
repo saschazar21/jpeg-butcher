@@ -8,7 +8,10 @@ import {
 } from 'preact/hooks';
 import { useStoreon } from 'storeon/preact';
 
+import RotateCCWIcon from 'assets/icons/rotate-ccw.svgr.svg';
 import Byte from 'components/HexEditor/Byte';
+import Controls from 'components/HexEditor/Controls';
+import ControlsItem from 'components/HexEditor/Controls/ControlsItem';
 import type { JPEGEvents, JPEGState } from 'store';
 import { toHex, validateHex } from 'utils/helpers';
 
@@ -42,6 +45,8 @@ const HexEditor = (): JSX.Element => {
       setSelected((prev: number[]) => (prev.length === 2 ? [] : prev)),
     [pressed, setSelected],
   );
+
+  const handleDelete = () => dispatch('@init');
 
   const handleHover = useCallback(
     (byte: number) => {
@@ -136,6 +141,8 @@ const HexEditor = (): JSX.Element => {
     );
   };
 
+  const handleReset = () => dispatch('reset');
+
   const bytes: JSX.Element[] = useMemo(() => {
     const stripped =
       modified.length > MAX_LENGTH
@@ -166,6 +173,13 @@ const HexEditor = (): JSX.Element => {
 
   return (
     <Selection.Provider value={pressed}>
+      <Controls>
+        <ControlsItem onClick={handleReset}>
+          <RotateCCWIcon className={styles.icon} />
+          Reset
+        </ControlsItem>
+        <ControlsItem onClick={handleDelete}>Delete</ControlsItem>
+      </Controls>
       <div
         className={styles.editor}
         style={{ paddingLeft: `${hexPadding + 1}ch` }}

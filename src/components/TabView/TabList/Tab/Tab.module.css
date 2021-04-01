@@ -9,7 +9,7 @@
   font-family: inherit;
 }
 
-.tab:not(:first-child) {
+.tab + .tab {
   margin-left: 2px;
 }
 

@@ -1,0 +1,26 @@
+.control {
+  transition: var(--noop, background-color) 300ms ease-in;
+  display: block;
+  border: none;
+  padding: 1ch;
+  background-color: hsl(var(--color-error), 0.75);
+  color: hsl(var(--color-bg));
+  font-family: inherit;
+  font-weight: bold;
+}
+
+.control:hover,
+.control:focus {
+  background-color: hsl(var(--color-error));
+  outline: none;
+}
+
+.control + .control {
+  margin-left: 2px;
+}
+
+@media (min-width: 768px) {
+  .control {
+    padding: 1ch 2ch;
+  }
+}

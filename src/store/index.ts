@@ -9,6 +9,7 @@ export type JPEGState = {
 };
 
 export type JPEGEvents = {
+  '@init': undefined;
   reset: undefined;
   set: [Uint8Array, string];
   update: Uint8Array;

@@ -49,7 +49,7 @@
 .downloadicon {
   display: inline-block;
   background-color: hsl(var(--color-bg));
-  margin-right: 2ch;
+  margin-right: 1ch;
   width: 1em;
   height: 1em;
   color: inherit;

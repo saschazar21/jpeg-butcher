@@ -20,3 +20,10 @@
   top: 0;
   bottom: 0;
 }
+
+.icon {
+  display: inline-block;
+  margin-right: 1ch;
+  width: 1em;
+  height: 1em;
+}
