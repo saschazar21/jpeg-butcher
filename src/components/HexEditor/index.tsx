@@ -9,6 +9,7 @@ import {
 import { useStoreon } from 'storeon/preact';
 
 import RotateCCWIcon from 'assets/icons/rotate-ccw.svgr.svg';
+import TrashIcon from 'assets/icons/trash.svgr.svg';
 import Byte from 'components/HexEditor/Byte';
 import Controls from 'components/HexEditor/Controls';
 import ControlsItem from 'components/HexEditor/Controls/ControlsItem';
@@ -178,7 +179,10 @@ const HexEditor = (): JSX.Element => {
           <RotateCCWIcon className={styles.icon} />
           Reset
         </ControlsItem>
-        <ControlsItem onClick={handleDelete}>Delete</ControlsItem>
+        <ControlsItem onClick={handleDelete}>
+          <TrashIcon className={styles.icon} />
+          Delete
+        </ControlsItem>
       </Controls>
       <div
         className={styles.editor}

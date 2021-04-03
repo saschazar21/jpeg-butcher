@@ -1,6 +1,7 @@
 .control {
   transition: var(--noop, background-color) 300ms ease-in;
-  display: block;
+  display: inline-flex;
+  align-items: center;
   border: none;
   padding: 1ch;
   background-color: hsl(var(--color-error), 0.75);
