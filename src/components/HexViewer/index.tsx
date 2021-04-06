@@ -7,6 +7,7 @@ import Byte from 'components/HexViewer/Byte';
 import { MAX_LENGTH } from 'components/HexEditor';
 
 import foreignStyles from 'components/HexEditor/HexEditor.module.css';
+import styles from 'components/HexViewer/HexViewer.module.css';
 
 const HexViewer = (): JSX.Element => {
   const { modified } = useStoreon<JPEGState, JPEGEvents>('modified');
@@ -21,7 +22,11 @@ const HexViewer = (): JSX.Element => {
     [modified],
   );
 
-  return <div className={foreignStyles.editor}>{bytes}</div>;
+  return (
+    <div className={styles.viewer}>
+      <div className={foreignStyles.editor}>{bytes}</div>
+    </div>
+  );
 };
 
 export default HexViewer;

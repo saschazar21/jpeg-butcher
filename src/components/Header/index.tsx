@@ -46,7 +46,7 @@ const Header = (): JSX.Element => {
             type="image/jpeg"
           >
             <DownloadIcon className={styles.downloadicon} />
-            {name}
+            <span className={styles.name}>{name}</span>
           </a>
         </Fragment>
       )}

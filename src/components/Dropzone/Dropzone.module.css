@@ -4,11 +4,9 @@
   place-content: center;
   border-radius: var(--border-radius);
   border: 0.5rem dashed hsl(var(--color-bg-offset), 0.25);
-  margin: 0 auto;
-  width: 100%;
+  margin: 0 1rem;
+  min-width: 0;
   height: 480px;
-  max-width: 640px;
-  max-height: 100%;
 }
 
 .dropzone:hover {
@@ -26,4 +24,13 @@
 
 .input {
   display: none;
+}
+
+@media (min-width: 768px) {
+  .dropzone {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 640px;
+    max-height: 100%;
+  }
 }

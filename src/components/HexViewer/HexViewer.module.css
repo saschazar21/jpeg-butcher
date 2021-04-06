@@ -1,0 +1,6 @@
+.viewer {
+  display: flex;
+  justify-content: center;
+  margin-top: 7ch;
+  max-width: 100%;
+}

@@ -174,21 +174,23 @@ const HexEditor = (): JSX.Element => {
 
   return (
     <Selection.Provider value={pressed}>
-      <Controls>
-        <ControlsItem onClick={handleReset}>
-          <RotateCCWIcon className={styles.icon} />
-          Reset
-        </ControlsItem>
-        <ControlsItem onClick={handleDelete}>
-          <TrashIcon className={styles.icon} />
-          Delete
-        </ControlsItem>
-      </Controls>
-      <div
-        className={styles.editor}
-        style={{ paddingLeft: `${hexPadding + 1}ch` }}
-      >
-        {bytes}
+      <div className={styles.wrapper}>
+        <Controls>
+          <ControlsItem onClick={handleReset}>
+            <RotateCCWIcon className={styles.icon} />
+            Reset
+          </ControlsItem>
+          <ControlsItem onClick={handleDelete}>
+            <TrashIcon className={styles.icon} />
+            Delete
+          </ControlsItem>
+        </Controls>
+        <div
+          className={styles.editor}
+          style={{ paddingLeft: `${hexPadding + 1}ch` }}
+        >
+          {bytes}
+        </div>
       </div>
       {selected.length === 2 && (
         <input

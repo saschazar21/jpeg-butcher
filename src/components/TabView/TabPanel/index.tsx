@@ -15,7 +15,7 @@ const TabPanel = ({ children, id }: TabPanelProps): JSX.Element => {
   const isSelected = id === selected;
 
   return (
-    <div
+    <section
       className={styles.panel}
       id={`${id}-panel`}
       role="tabpanel"
@@ -23,7 +23,7 @@ const TabPanel = ({ children, id }: TabPanelProps): JSX.Element => {
       hidden={!isSelected}
     >
       {children}
-    </div>
+    </section>
   );
 };
 

@@ -30,7 +30,7 @@
   background-color: hsl(var(--color-bg-offset), 0.25);
 }
 
-.editorByte:nth-child(16n + 1):after {
+.editorByte:nth-child(8n + 1):after {
   content: attr(data-offset);
   display: block;
   position: absolute;
@@ -48,4 +48,21 @@
 
 .invalid {
   background-color: hsl(var(--color-error), 0.75);
+}
+
+@media (min-width: 768px) {
+  .editorByte:nth-child(8n + 1):after {
+    content: unset;
+  }
+
+  .editorByte:nth-child(16n + 1):after {
+    content: attr(data-offset);
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: calc(100% + 1ch);
+    text-align: right;
+    color: hsl(var(--color-bg-offset));
+  }
 }
