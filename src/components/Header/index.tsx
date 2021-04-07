@@ -5,6 +5,7 @@ import { useStoreon } from 'storeon/preact';
 import type { JPEGEvents, JPEGState } from 'store';
 
 import DownloadIcon from 'assets/icons/download.svgr.svg';
+import Icon from 'assets/icons/icon.svgr.svg';
 
 import styles from 'components/Header/Header.module.css';
 
@@ -34,7 +35,10 @@ const Header = (): JSX.Element => {
 
   return (
     <header className={styles.header}>
-      <h1>JPEG Butcher</h1>
+      <h1>
+        <Icon className={styles.icon} />
+        <span>JPEG Butcher</span>
+      </h1>
       {name?.length > 0 && (
         <Fragment>
           <span className={styles.separator}>/</span>
