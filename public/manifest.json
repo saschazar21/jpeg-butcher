@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "JPEG Butcher",
+  "short_name": "JPEG Butcher",
+  "start_url": "/?utm_source=installed",
+  "display": "standalone",
+  "background_color": "#ebe7e6",
+  "theme_color": "#d73414",
+  "description": "A hex editor for JPEG files",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/maskable-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/maskable-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ]
+}

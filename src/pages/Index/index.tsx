@@ -21,7 +21,7 @@ const Index = (): JSX.Element => {
   ];
 
   return original.length ? (
-    <section className={styles.hex}>
+    <main className={styles.hex}>
       {mediaQuery?.matches ? (
         <Fragment>
           <TabView>
@@ -32,7 +32,7 @@ const Index = (): JSX.Element => {
       ) : (
         <TabView>{elements}</TabView>
       )}
-    </section>
+    </main>
   ) : (
     <Dropzone />
   );
