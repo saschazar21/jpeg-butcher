@@ -1,7 +1,9 @@
 {
   "scripts": {
     "start": "snowpack dev",
-    "build": "snowpack build",
+    "build:app": "snowpack build",
+    "build:sw": "workbox generateSW workbox-config.js",
+    "build": "run-s build:*",
     "test": "web-test-runner \"src/**/*.test.tsx\"",
     "format": "prettier --check --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:css": "stylelint \"**/*.css\"",
@@ -9,6 +11,7 @@
     "lint": "yarn format && yarn lint:css && yarn lint:js"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.13.13",
     "@prefresh/snowpack": "^3.0.0",
     "@snowpack/plugin-dotenv": "^2.0.5",
     "@snowpack/plugin-postcss": "^1.1.0",
@@ -25,6 +28,7 @@
     "eslint": "^7.21.0",
     "eslint-config-preact": "^1.1.3",
     "eslint-config-prettier": "^8.1.0",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.2.6",
     "postcss-cli": "^8.3.1",
     "postcss-import": "^14.0.0",
@@ -33,11 +37,12 @@
     "prettier": "^2.0.5",
     "sanitize": "^2.1.0",
     "snowpack": "^3.0.1",
-    "snowpack-svgr-plugin": "^1.0.3",
+    "snowpack-plugin-svgr": "^0.1.2",
     "stylelint": "^13.11.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-prettier": "^1.2.0",
-    "typescript": "^4.2.2"
+    "typescript": "^4.2.2",
+    "workbox-cli": "^6.1.2"
   },
   "dependencies": {
     "classnames": "^2.2.6",

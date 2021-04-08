@@ -28,7 +28,7 @@ const Image = (): JSX.Element => {
       new URL('../../worker/extract-dimensions.js', import.meta.url),
       {
         name: 'extract-image-dimensions-worker',
-        type: import.meta.env.mode === 'development' ? 'module' : 'classic',
+        type: import.meta.env.NODE_ENV === 'development' ? 'module' : 'classic',
       },
     );
 

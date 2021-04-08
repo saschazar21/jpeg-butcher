@@ -25,7 +25,7 @@ const fileReader = async (files: FileList): Promise<[Uint8Array, string]> =>
       new URL('../worker/strip-exif.js', import.meta.url),
       {
         name: 'strip-exif-worker',
-        type: import.meta.env.mode === 'development' ? 'module' : 'classic',
+        type: import.meta.env.NODE_ENV === 'development' ? 'module' : 'classic',
       },
     );
 

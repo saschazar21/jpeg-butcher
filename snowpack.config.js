@@ -19,8 +19,19 @@ module.exports = {
   plugins: [
     '@snowpack/plugin-dotenv',
     '@snowpack/plugin-postcss',
-    'snowpack-svgr-plugin',
-    '@snowpack/plugin-typescript',
+    [
+      'snowpack-plugin-svgr',
+      {
+        include: '**/*.svgr.svg',
+      },
+    ],
+    [
+      '@snowpack/plugin-typescript',
+      {
+        /* Yarn PnP workaround: see https://www.npmjs.com/package/@snowpack/plugin-typescript */
+        ...(process.versions.pnp ? { tsc: 'yarn pnpify tsc' } : {}),
+      },
+    ],
     '@prefresh/snowpack',
   ],
   routes: [
@@ -37,6 +48,7 @@ module.exports = {
   },
   packageOptions: {
     source: isProd ? 'remote' : 'local',
+    types: isProd,
   },
   devOptions: {
     /* ... */
