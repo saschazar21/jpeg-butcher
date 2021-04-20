@@ -11,6 +11,7 @@
     "lint": "yarn format && yarn lint:css && yarn lint:js"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
     "@babel/preset-react": "^7.13.13",
     "@prefresh/snowpack": "^3.0.0",
     "@snowpack/plugin-dotenv": "^2.0.5",
@@ -23,6 +24,7 @@
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
     "@web/test-runner": "^0.12.0",
+    "browserslist": "^4.0.0",
     "chai": "^4.2.0",
     "cssnano": "^4.1.10",
     "eslint": "^7.21.0",
@@ -35,8 +37,9 @@
     "postcss-normalize": "^9.0.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.0.5",
+    "rollup": "^1.20.0",
     "sanitize": "^2.1.0",
-    "snowpack": "^3.0.1",
+    "snowpack": "^3.2.2",
     "snowpack-plugin-svgr": "^0.1.2",
     "stylelint": "^13.11.0",
     "stylelint-config-prettier": "^8.0.2",
