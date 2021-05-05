@@ -7,6 +7,8 @@ import ImageZoom from 'components/Image/ImageZoom';
 import type { JPEGEvents, JPEGState } from 'store';
 import { ImageContext, ImageDimensions } from 'utils/context';
 
+import Worker from '../../worker/extract-dimensions?worker';
+
 import styles from 'components/Image/Image.module.css';
 
 const Image = (): JSX.Element => {
@@ -24,13 +26,7 @@ const Image = (): JSX.Element => {
   );
 
   useEffect(() => {
-    const worker = new Worker(
-      new URL('../../worker/extract-dimensions.js', import.meta.url),
-      {
-        name: 'extract-image-dimensions-worker',
-        type: import.meta.env.NODE_ENV === 'development' ? 'module' : 'classic',
-      },
-    );
+    const worker = new Worker();
 
     worker.onmessage = ({
       data: { height, width },

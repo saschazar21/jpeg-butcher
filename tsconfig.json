@@ -18,7 +18,8 @@
       "pages/*": ["src/pages/*"],
       "store": ["src/store"],
       "styles/*": ["src/styles/*"],
-      "utils/*": ["src/utils/*"]
+      "utils/*": ["src/utils/*"],
+      "worker/*": ["src/worker/*"]
     },
     /* noEmit - Snowpack builds (emits) files, not tsc. */
     "noEmit": true,

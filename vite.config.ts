@@ -1,8 +1,8 @@
 import { join } from 'path';
 import { defineConfig } from 'vite';
-import babel from '@rollup/plugin-babel';
 import prefresh from '@prefresh/vite';
 import svgr from 'vite-plugin-svgr';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
   build: {
@@ -15,10 +15,8 @@ export default defineConfig({
   },
   plugins: [
     svgr(),
-    babel({
-      babelHelpers: 'bundled',
-      configFile: join(__dirname, './.babelrc'),
-      extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    tsconfigPaths({
+      root: __dirname,
     }),
     prefresh(),
   ],

@@ -1,3 +1,5 @@
+import Worker from '../worker/strip-exif?worker';
+
 export const SUPPORTED_FILETYPES = ['image/jpeg'];
 
 const fileReader = async (files: FileList): Promise<[Uint8Array, string]> =>
@@ -21,13 +23,7 @@ const fileReader = async (files: FileList): Promise<[Uint8Array, string]> =>
       );
     }
 
-    const worker = new Worker(
-      new URL('../worker/strip-exif.js', import.meta.url),
-      {
-        name: 'strip-exif-worker',
-        type: import.meta.env.NODE_ENV === 'development' ? 'module' : 'classic',
-      },
-    );
+    const worker = new Worker();
 
     worker.onmessage = ({ data }: MessageEvent<Uint8Array>) => {
       resolve([new Uint8Array(data as ArrayBuffer), file.name]);
