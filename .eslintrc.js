@@ -11,4 +11,9 @@ module.exports = {
   rules: {
     'jest/valid-expect': 'off',
   },
+  settings: {
+    'import/resolver': {
+      'babel-module': {},
+    },
+  },
 };

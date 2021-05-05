@@ -4,8 +4,8 @@ import { useStoreon } from 'storeon/preact';
 
 import type { JPEGEvents, JPEGState } from 'store';
 
-import DownloadIcon from 'assets/icons/download.svgr.svg';
-import Icon from 'assets/icons/icon.svgr.svg';
+import { ReactComponent as DownloadIcon } from 'assets/icons/download.svgr.svg';
+import { ReactComponent as Icon } from 'assets/icons/icon.svgr.svg';
 
 import styles from 'components/Header/Header.module.css';
 

@@ -2,8 +2,8 @@
 /* Use this folder to also add/extend a package d.ts file, if needed. */
 declare module '*.svgr.svg' {
   import type { FunctionalComponent } from 'preact';
-  const ref: FunctionalComponent<{ className?: string }>;
-  export default ref;
+  const ReactComponent: FunctionalComponent<{ className?: string }>;
+  export const ReactComponent;
 }
 
 /* CSS MODULES */

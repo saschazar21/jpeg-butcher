@@ -8,8 +8,8 @@ import {
 } from 'preact/hooks';
 import { useStoreon } from 'storeon/preact';
 
-import RotateCCWIcon from 'assets/icons/rotate-ccw.svgr.svg';
-import TrashIcon from 'assets/icons/trash.svgr.svg';
+import { ReactComponent as RotateCCWIcon } from 'assets/icons/rotate-ccw.svgr.svg';
+import { ReactComponent as TrashIcon } from 'assets/icons/trash.svgr.svg';
 import Byte from 'components/HexEditor/Byte';
 import Controls from 'components/HexEditor/Controls';
 import ControlsItem from 'components/HexEditor/Controls/ControlsItem';

@@ -1,7 +1,7 @@
 @import 'styles/themes.css';
 @import 'styles/typography.css';
 
-@import 'sanitize';
+/* @import 'sanitize'; */
 
 @media (prefers-reduced-motion) {
   :root {
