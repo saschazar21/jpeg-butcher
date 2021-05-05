@@ -1,4 +1,15 @@
 {
+  "name": "jpeg-butcher",
+  "displayName": "JPEG Butcher",
+  "description": "A hex editor for JPEG images. Change the looks of an image by altering the value of a random byte or simply click the reset button when you've gone too far.",
+  "color": "#d73414",
+  "license": "MIT",
+  "homepage": "https://jpeg-butcher.sascha.app",
+  "author": {
+    "name": "Sascha Zarhuber",
+    "email": "saschazar21@yahoo.de",
+    "url": "https://sascha.work"
+  },
   "scripts": {
     "start": "vite",
     "build:check": "tsc",
@@ -25,7 +36,7 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "browserslist": "^4.0.0",
     "chai": "^4.2.0",
-    "cssnano": "^4.1.10",
+    "cssnano": "^5.0.2",
     "eslint": "^7.21.0",
     "eslint-config-preact": "^1.1.3",
     "eslint-config-prettier": "^8.1.0",
@@ -34,8 +45,8 @@
     "npm-run-all": "^4.1.5",
     "postcss": "^8.2.6",
     "postcss-cli": "^8.3.1",
-    "postcss-import": "^14.0.0",
-    "postcss-normalize": "^9.0.0",
+    "postcss-import": "^14.0.1",
+    "postcss-normalize": "^10.0.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.0.5",
     "rollup": "^1.20.0",
@@ -45,6 +56,7 @@
     "stylelint-prettier": "^1.2.0",
     "typescript": "^4.2.2",
     "vite": "^2.2.4",
+    "vite-plugin-html-config": "^1.0.2",
     "vite-plugin-svgr": "^0.2.0",
     "vite-tsconfig-paths": "^3.3.10",
     "workbox-cli": "^6.1.2"

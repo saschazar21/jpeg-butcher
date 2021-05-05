@@ -35,7 +35,7 @@ const Header = (): JSX.Element => {
 
   return (
     <header className={styles.header}>
-      <h1>
+      <h1 className={styles.headline}>
         <Icon className={styles.icon} />
         <span>JPEG Butcher</span>
       </h1>

@@ -34,6 +34,11 @@
   font-weight: bold;
 }
 
+.headline {
+  display: inline-flex;
+  align-items: center;
+}
+
 .separator {
   text-align: right;
 }
