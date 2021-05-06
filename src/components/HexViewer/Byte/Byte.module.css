@@ -1,3 +1,4 @@
 .viewerByte {
   color: hsl(var(--color-bg-offset));
+  font-weight: 700;
 }

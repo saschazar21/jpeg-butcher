@@ -25,4 +25,5 @@
 html {
   --border-radius: 6px;
   --transition-duration: 300ms;
+  --container-width: 640px;
 }

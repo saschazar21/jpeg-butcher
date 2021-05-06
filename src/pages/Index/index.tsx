@@ -34,7 +34,9 @@ const Index = (): JSX.Element => {
       )}
     </main>
   ) : (
-    <Dropzone />
+    <main>
+      <Dropzone />
+    </main>
   );
 };
 

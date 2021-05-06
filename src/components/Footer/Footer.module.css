@@ -1,0 +1,41 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 1rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid hsl(var(--color-bg-offset), 0.25);
+  max-width: var(--container-width);
+  text-align: center;
+}
+
+.info {
+  flex: 1 0 auto;
+}
+
+.iconContainer {
+  margin-top: 1.5rem;
+}
+
+.iconContainer > a + a {
+  margin-left: 0.5em;
+}
+
+.icon {
+  display: inline-block;
+  border-radius: 12px;
+  padding: 0.333em;
+  height: 1em;
+  width: 1em;
+  min-height: 44px;
+  min-width: 44px;
+  background: hsl(var(--color-text));
+  color: hsl(var(--color-bg));
+}
+
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+    margin: 4rem auto;
+    text-align: unset;
+  }
+}

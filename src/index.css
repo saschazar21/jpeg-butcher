@@ -22,3 +22,9 @@ body {
 body * {
   box-sizing: border-box;
 }
+
+a,
+a:hover,
+a:visited {
+  color: inherit;
+}

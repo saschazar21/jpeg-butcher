@@ -10,6 +10,10 @@
     "email": "saschazar21@yahoo.de",
     "url": "https://sascha.work"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saschazar21/jpeg-butcher"
+  },
   "scripts": {
     "start": "vite",
     "build:check": "tsc",
