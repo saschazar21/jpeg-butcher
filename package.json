@@ -14,7 +14,6 @@
     "start": "vite",
     "build:check": "tsc",
     "build:site": "vite build",
-    "build:sw": "workbox generateSW workbox-config.js",
     "build": "run-s build:*",
     "serve": "vite serve",
     "test": "web-test-runner \"src/**/*.test.tsx\"",
@@ -61,8 +60,8 @@
     "typescript": "^4.2.2",
     "vite": "^2.2.4",
     "vite-plugin-html-config": "^1.0.2",
-    "vite-tsconfig-paths": "^3.3.10",
-    "workbox-cli": "^6.1.2"
+    "vite-plugin-pwa": "^0.7.3",
+    "vite-tsconfig-paths": "^3.3.10"
   },
   "dependencies": {
     "classnames": "^2.2.6",
