@@ -1,4 +1,4 @@
-import { h, JSX } from 'preact';
+import type { JSX } from 'preact';
 import { StoreContext } from 'storeon/preact';
 
 import Header from 'components/Header';

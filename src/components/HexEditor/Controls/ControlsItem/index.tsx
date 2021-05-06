@@ -1,4 +1,4 @@
-import { h, JSX, ComponentChildren } from 'preact';
+import type { JSX, ComponentChildren } from 'preact';
 
 import styles from 'components/HexEditor/Controls/ControlsItem/ControlsItem.module.css';
 

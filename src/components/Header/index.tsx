@@ -1,4 +1,4 @@
-import { h, Fragment, JSX } from 'preact';
+import type { JSX } from 'preact';
 import { useMemo } from 'preact/hooks';
 import { useStoreon } from 'storeon/preact';
 
@@ -40,7 +40,7 @@ const Header = (): JSX.Element => {
         <span>JPEG Butcher</span>
       </h1>
       {name?.length > 0 && (
-        <Fragment>
+        <>
           <span className={styles.separator}>/</span>
           <a
             alt="Download your butchered result as JPEG image"
@@ -52,7 +52,7 @@ const Header = (): JSX.Element => {
             <DownloadIcon className={styles.downloadicon} />
             <span className={styles.name}>{name}</span>
           </a>
-        </Fragment>
+        </>
       )}
     </header>
   );

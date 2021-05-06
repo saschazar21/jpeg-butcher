@@ -1,4 +1,4 @@
-import { ComponentChild, ComponentChildren, h, JSX } from 'preact';
+import type { ComponentChild, ComponentChildren, JSX } from 'preact';
 import { useContext } from 'preact/hooks';
 
 import { TabContext } from 'components/TabView';

@@ -1,16 +1,18 @@
 import { join } from 'path';
 import { defineConfig } from 'vite';
 import htmlConfig from 'vite-plugin-html-config';
-import prefresh from '@prefresh/vite';
-import svgr from 'vite-plugin-svgr';
+import preact from '@preact/preset-vite';
+import svgr from '@svgr/rollup';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 import htmlConfigOptions from './config/html-config';
 
 export default defineConfig({
   build: {
+    cssCodeSplit: true,
     emptyOutDir: true,
     outDir: join(__dirname, './build'),
+    sourcemap: process.env.NODE_ENV !== 'production',
   },
   css: {
     modules: {
@@ -27,11 +29,17 @@ export default defineConfig({
   },
   plugins: [
     htmlConfig(htmlConfigOptions),
-    svgr(),
+    svgr({
+      plugins: [
+        '@svgr/plugin-svgo',
+        '@svgr/plugin-jsx',
+        '@svgr/plugin-prettier',
+      ],
+    }),
     tsconfigPaths({
       root: __dirname,
     }),
-    prefresh(),
+    preact({ devtoolsInProd: false }),
   ],
   publicDir: join(__dirname, './public'),
   resolve: {

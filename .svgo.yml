@@ -1,5 +1,0 @@
-multipass: true
-
-plugins:
-  - removeViewBox: false
-  - sortAttrs: true

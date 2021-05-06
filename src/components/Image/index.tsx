@@ -1,4 +1,4 @@
-import { h, JSX } from 'preact';
+import type { JSX } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
 import { useStoreon } from 'storeon/preact';
 

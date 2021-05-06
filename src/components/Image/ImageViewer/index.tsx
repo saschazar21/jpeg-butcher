@@ -1,4 +1,4 @@
-import { h, JSX } from 'preact';
+import type { JSX } from 'preact';
 import { useContext, useEffect, useRef } from 'preact/hooks';
 
 import styles from 'components/Image/ImageViewer/ImageViewer.module.css';

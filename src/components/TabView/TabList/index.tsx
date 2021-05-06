@@ -1,4 +1,4 @@
-import { h, JSX, VNode } from 'preact';
+import type { JSX, VNode } from 'preact';
 
 import type { TabProps } from 'components/TabView/TabList/Tab';
 

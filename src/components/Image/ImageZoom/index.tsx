@@ -1,4 +1,4 @@
-import { h, JSX } from 'preact';
+import type { JSX } from 'preact';
 import { useContext } from 'preact/hooks';
 
 import { ImageContext } from 'utils/context';

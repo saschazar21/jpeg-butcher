@@ -1,4 +1,4 @@
-import { h, JSX } from 'preact';
+import type { JSX } from 'preact';
 import classnames from 'classnames';
 
 import foreignStyles from 'components/HexEditor/Byte/Byte.module.css';

@@ -1,4 +1,4 @@
-import { h, Fragment, JSX } from 'preact';
+import type { JSX } from 'preact';
 import { useRef, useState } from 'preact/hooks';
 import classnames from 'classnames';
 import { useStoreon } from 'storeon/preact';
@@ -69,7 +69,7 @@ const Dropzone = (): JSX.Element => {
     [styles.error]: error,
   });
   return (
-    <Fragment>
+    <>
       <div
         className={className}
         onClick={handleClick}
@@ -96,7 +96,7 @@ const Dropzone = (): JSX.Element => {
         className={styles.input}
         onChange={handleChange}
       />
-    </Fragment>
+    </>
   );
 };
 

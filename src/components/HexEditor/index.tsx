@@ -1,4 +1,4 @@
-import { h, JSX, createContext } from 'preact';
+import { JSX, createContext } from 'preact';
 import {
   useCallback,
   useEffect,

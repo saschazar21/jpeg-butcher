@@ -8,9 +8,10 @@
     "jsx": "preserve",
     "jsxFactory": "h",
     "jsxFragmentFactory": "Fragment",
+    "jsxImportSource": "preact",
     "baseUrl": "./",
     /* paths - import rewriting/resolving */
-    "types": ["vite/client"],
+    "types": ["vite/client", "preact"],
     "paths": {
       "assets/*": ["src/assets/*"],
       "components/*": ["src/components/*"],

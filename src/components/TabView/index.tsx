@@ -1,4 +1,4 @@
-import { createContext, h, JSX, VNode } from 'preact';
+import { createContext, JSX, VNode } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import { paramCase } from 'param-case';
 

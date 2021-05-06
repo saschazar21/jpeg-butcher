@@ -1,4 +1,4 @@
-import { Fragment, h, JSX, VNode } from 'preact';
+import type { JSX, VNode } from 'preact';
 import { useStoreon } from 'storeon/preact';
 
 import Dropzone from 'components/Dropzone';
@@ -15,20 +15,20 @@ const Index = (): JSX.Element => {
   const mediaQuery = window.matchMedia('(min-width: 1200px)');
 
   const elements: VNode<{ 'data-title': string }>[] = [
-    <HexEditor data-title="Editor" />,
-    <Image data-title="Image Preview" />,
-    <HexViewer data-title="Text" />,
+    <HexEditor key="hexeditor" data-title="Editor" />,
+    <Image key="imagepreview" data-title="Image Preview" />,
+    <HexViewer key="hexviewer" data-title="Text" />,
   ];
 
   return original.length ? (
     <main className={styles.hex}>
       {mediaQuery?.matches ? (
-        <Fragment>
+        <>
           <TabView>
             {elements.shift() as VNode<{ 'data-title': string }>}
           </TabView>
           <TabView>{elements}</TabView>
-        </Fragment>
+        </>
       ) : (
         <TabView>{elements}</TabView>
       )}

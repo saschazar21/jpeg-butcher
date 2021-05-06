@@ -1,4 +1,4 @@
-import { h, JSX } from 'preact';
+import type { JSX } from 'preact';
 import { useContext, useMemo } from 'preact/hooks';
 import classnames from 'classnames';
 
