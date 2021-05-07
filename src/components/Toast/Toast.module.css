@@ -1,0 +1,40 @@
+@keyframes appear {
+  from {
+    transform: translateX(-50%) translateY(calc(120% + 2ch));
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.wrapper {
+  animation: appear 500ms ease-out;
+  position: fixed;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  box-shadow: 0 0 15px -2px hsl(var(--color-primary-offset));
+  border: 1px solid hsl(var(--color-primary));
+  width: 375px; /* iPhone 6 width */
+  max-width: calc(100vw - 4ch);
+  background-color: hsl(var(--color-bg));
+  bottom: 2ch;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.icon {
+  flex: 0 0 auto;
+  padding: 0.5em;
+  min-height: 2.5em;
+  height: auto;
+  width: 2.5em;
+  background-color: hsl(var(--color-primary));
+  color: hsl(var(--color-bg));
+}
+
+.text {
+  display: block;
+  padding: 0.5em 0.75em;
+}

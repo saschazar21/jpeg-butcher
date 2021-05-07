@@ -62,6 +62,13 @@ const options: Options = {
       name: 'twitter:image',
       content: new URL(CARD_IMAGE_PATH, pkg.homepage).toString(),
     },
+    {
+      name: 'robots',
+      content:
+        process.env.CONTEXT === 'production'
+          ? 'index follow'
+          : 'noindex nofollow',
+    },
   ],
 };
 
