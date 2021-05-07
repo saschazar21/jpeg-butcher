@@ -28,3 +28,7 @@ a:hover,
 a:visited {
   color: inherit;
 }
+
+a:focus {
+  outline: 0.5px dotted hsl(var(--color-text));
+}

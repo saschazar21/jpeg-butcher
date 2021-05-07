@@ -23,13 +23,13 @@
 .icon {
   display: inline-block;
   border-radius: 12px;
-  padding: 0.333em;
+  padding: 0.5em;
   height: 1em;
   width: 1em;
   min-height: 44px;
   min-width: 44px;
   background: hsl(var(--color-text));
-  color: hsl(var(--color-bg));
+  color: hsl(var(--color-bg), 0.75);
 }
 
 @media (min-width: 768px) {

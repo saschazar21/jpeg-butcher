@@ -6,6 +6,8 @@ import Tab, { TabProps } from 'components/TabView/TabList/Tab';
 import TabList from 'components/TabView/TabList';
 import TabPanel, { TabPanelProps } from 'components/TabView/TabPanel';
 
+import styles from 'components/TabView/TabView.module.css';
+
 export type TabViewProps = {
   children:
     | VNode<{
@@ -54,7 +56,7 @@ const TabView = ({ children }: TabViewProps): JSX.Element => {
   }, [children]);
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <TabContext.Provider value={selected}>
         <TabList>{tabs}</TabList>
         {panels}
