@@ -17,7 +17,7 @@ This repository contains the source code for [jpeg-butcher.sascha.app](https://j
 
 ### Privacy
 
-Images uploaded to the website will never leave the browser and stay cached entirely on each local device for the duration of the usage of the website. There is neither any data transfer to third-party servers, nor does the original server process any data from those images. In fact, the website is even purely offline accessible—so once opened on the local device, the website won't need any communication to its hosting server, other than occasionally fetching updates for website assets (e.g. logos, icons, etc...).
+Images uploaded to the website will never leave the browser and stay cached entirely on each local device for the duration of the usage of the website. There is neither any data transfer happening to third-party servers, nor does the original server process any data from those images. In fact, the website is even purely offline accessible—so once opened on the local device, the website won't need any communication to its hosting server, other than occasionally fetching updates for website assets (e.g. logos, icons, etc...).
 
 ## How it works
 
