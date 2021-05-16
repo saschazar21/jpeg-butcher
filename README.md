@@ -1,27 +1,48 @@
-# New Project
+<div align="center">
+  <img src="public/icons/icon-192.png" alt="The icon of JPEG Butcher" width="192px" />
+  <br />
+  <h1><a href="https://jpeg-butcher.sascha.app/" rel="noopener noreferrer">jpeg-butcher.sascha.app</a></h1>
+  <strong>📷🗒️ A hex editor for JPEG images. Change the looks of an image by altering the value of a random byte or simply click the reset button when you've gone too far.</strong>
+  <br />
+  <br />
+  <img alt="License" src="https://img.shields.io/github/license/saschazar21/jpeg-butcher" /> 
+  <br />
+  <br />
+  <br />
+</div>
 
-> ✨ Bootstrapped with Create Snowpack App (CSA).
+## About
 
-## Available Scripts
+This repository contains the source code for [jpeg-butcher.sascha.app](https://jpeg-butcher.sascha.app), a project for manipulating JPEG files using a hex editor.
 
-### npm start
+### Privacy
 
-Runs the app in the development mode.
-Open http://localhost:8080 to view it in the browser.
+Images uploaded to the website will never leave the browser and stay cached entirely on each local device for the duration of the usage of the website. There is neither any data transfer to third-party servers, nor does the original server process any data from those images. In fact, the website is even purely offline accessible—so once opened on the local device, the website won't need any communication to its hosting server, other than occasionally fetching updates for website assets (e.g. logos, icons, etc...).
 
-The page will reload if you make edits.
-You will also see any lint errors in the console.
+## How it works
 
-### npm test
+_work in progress_
 
-Launches the test runner in the interactive watch mode.
-See the section about running tests for more information.
+## Build Setup
 
-### npm run build
+```bash
+# install dependencies
+$ yarn install
 
-Builds the app for production to the `build/` folder.
-It correctly bundles Preact in production mode and optimizes the build for the best performance.
+# serve with hot reload at localhost:3000
+$ yarn start
 
-### Q: What about Eject?
+# build for production and launch server
+$ yarn build
+$ yarn serve
+```
 
-No eject needed! Snowpack guarantees zero lock-in, and CSA strives for the same.
+## Contribution
+
+This is very much a hacky project and could use some formatting-, testing- and documentation love. Feel free to reach out, if you're interested.
+
+## License
+
+Licensed under the MIT license.
+
+Copyright ©️ 2021 [Sascha Zarhuber](https://sascha.work)
