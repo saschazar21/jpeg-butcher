@@ -49,6 +49,14 @@ The _variable_ byte size is indicated by 2 bytes following the respective JPEG m
 | **COM**    | `0xFF` `0xFE`          | _variable_ | Comment                      | Placeholder for textual comment                                                                 |
 | **EOI**    | `0xFF` `0xD9`          | _none_     | End Of Image                 | Last marker in a valid JPEG file, marks end of file                                             |
 
+### Manipulating Values
+
+Generally speaking, there is no real strategy for how to gain certain effects by changing specific values. Mostly it's a hit or miss—although each image may be reset to its initial state for starting over again. Omar Shehata provides some information in his article [Unraveling the JPEG](https://parametric.press/issue-01/unraveling-the-jpeg/) for getting started.
+
+The safest way of experimenting with different values is looking for a Huffman table marker (`FF C4`) and start changing payload values greater than 10 or so...
+
+ℹ️ Whenever the preview image becomes invisible, the byte values have been changed to a state, where they are corrupting the image so that it's not decodeable anymore.
+
 ## Build Setup
 
 ```bash
@@ -66,6 +74,10 @@ $ yarn serve
 ## Contribution
 
 This is very much a hacky project and could use some formatting-, testing- and documentation love. Feel free to reach out, if you're interested.
+
+## Credits
+
+This project was heavily influenced by [Omar Shehata](https://omarshehata.me/)'s blog post [Unraveling the JPEG](https://parametric.press/issue-01/unraveling-the-jpeg/).
 
 ## License
 
