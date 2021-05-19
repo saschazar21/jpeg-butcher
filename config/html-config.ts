@@ -2,7 +2,7 @@ import { URL } from 'url';
 import type { Options } from 'vite-plugin-html-config';
 import pkg from '../package.json';
 
-const CARD_IMAGE_PATH = '/card-image.jpg';
+const CARD_IMAGE_PATH = '/card-image.png';
 
 const options: Options = {
   metas: [
@@ -66,8 +66,8 @@ const options: Options = {
       name: 'robots',
       content:
         process.env.CONTEXT === 'production'
-          ? 'index follow'
-          : 'noindex nofollow',
+          ? 'index, follow'
+          : 'noindex, nofollow',
     },
   ],
 };

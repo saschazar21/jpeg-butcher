@@ -8,6 +8,9 @@
   <img alt="License" src="https://img.shields.io/github/license/saschazar21/jpeg-butcher" /> 
   <br />
   <br />
+  <img alt="Image showing parts of the user interface, divided into three parts: the leftmost part showing the website's editor in dark mode, the center part in light mode, and the rightmost part is a red plane containing the website's logo and the title JPEG Butcher." src="public/card-image.png" width="768px" />
+  <br />
+  <br />
   <br />
 </div>
 
