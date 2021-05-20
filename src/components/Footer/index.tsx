@@ -32,6 +32,7 @@ const Footer = (): JSX.Element => {
         <a
           href={pkg.repository.url}
           target="_blank"
+          title="Take a look at the source code on GitHub"
           rel="noindex nofollow noreferrer"
         >
           <GithubIcon className={styles.icon} />
