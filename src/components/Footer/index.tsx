@@ -1,7 +1,6 @@
 import type { JSX } from 'preact';
 
 import { ReactComponent as GithubIcon } from 'assets/icons/github.svgr.svg';
-import { ReactComponent as InstagramIcon } from 'assets/icons/instagram.svgr.svg';
 import pkg from '../../../package.json';
 
 import styles from 'components/Footer/Footer.module.css';

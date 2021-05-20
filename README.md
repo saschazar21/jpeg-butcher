@@ -5,10 +5,10 @@
   <strong>📷🗒️ A hex editor for JPEG images. Change the looks of an image by altering the value of a random byte or simply click the reset button when you've gone too far.</strong>
   <br />
   <br />
-  <img alt="License" src="https://img.shields.io/github/license/saschazar21/jpeg-butcher" /> 
+  <a href="https://github.com/saschazar21/jpeg-butcher/actions/workflows/deploy-to-netlify.yml"><img alt="GitHub Actions: Deploy to Netlify workflow" src="https://github.com/saschazar21/jpeg-butcher/actions/workflows/deploy-to-netlify.yml/badge.svg" /></a> <a href="https://github.com/saschazar21/jpeg-butcher/actions/workflows/build-and-test.yml"><img alt="GitHub Actions: Test workflow" src="https://github.com/saschazar21/jpeg-butcher/actions/workflows/build-and-test.yml/badge.svg" /></a><img alt="License" src="https://img.shields.io/github/license/saschazar21/jpeg-butcher" /> 
   <br />
   <br />
-  <a href="https://github.com/saschazar21/jpeg-butcher/actions/workflows/deploy-to-netlify.yml"><img alt="GitHub Actions: Deploy to Netlify workflow" src="https://github.com/saschazar21/jpeg-butcher/actions/workflows/deploy-to-netlify.yml/badge.svg" /></a> <a href="https://github.com/saschazar21/jpeg-butcher/actions/workflows/build-and-test.yml"><img alt="GitHub Actions: Test workflow" src="https://github.com/saschazar21/jpeg-butcher/actions/workflows/build-and-test.yml/badge.svg" /></a><img alt="Image showing parts of the user interface, divided into three parts: the leftmost part showing the website's editor in dark mode, the center part in light mode, and the rightmost part is a red plane containing the website's logo and the title JPEG Butcher." src="public/card-image.png" width="768px" />
+  <img alt="Image showing parts of the user interface, divided into three parts: the leftmost part showing the website's editor in dark mode, the center part in light mode, and the rightmost part is a red plane containing the website's logo and the title JPEG Butcher." src="public/card-image.png" width="768px" />
   <br />
   <br />
   <br />
