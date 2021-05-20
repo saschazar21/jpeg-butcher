@@ -10,18 +10,14 @@ jobs:
     env:
       DEBUG: localhost-screenshot
 
-    strategy:
-      matrix:
-        node-version: [12.x, 14.x]
-
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 14
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 14
 
       - name: Cache node_modules
         uses: actions/cache@v2
@@ -39,28 +35,6 @@ jobs:
 
       - name: Build website
         run: yarn build
-
-  screenshot:
-    runs-on: ubuntu-latest
-    name: Screenshot
-    needs: test
-
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v2
-
-      - name: Use Node.js 14
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14
-
-      - name: Cache node_modules
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: yarn-deps-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            yarn-deps-${{ hashFiles('yarn.lock') }}
 
       - name: Create website screenshots (light mode)
         uses: saschazar21/actions/packages/localhost-screenshot@main
