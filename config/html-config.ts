@@ -3,6 +3,12 @@ import type { Options } from 'vite-plugin-html-config';
 import pkg from '../package.json';
 
 const CARD_IMAGE_PATH = '/card-image.png';
+const DOMAIN =
+  process.env.CONTEXT === 'production'
+    ? process.env.URL ?? pkg.homepage
+    : process.env.PREVIEW_URL ?? 'http://localhost:3000';
+
+const getURL = (path = ''): string => new URL(path, DOMAIN).toString();
 
 const options: Options = {
   metas: [
@@ -20,7 +26,7 @@ const options: Options = {
     },
     {
       name: 'og:url',
-      content: pkg.homepage,
+      content: getURL(),
     },
     {
       name: 'og:type',
@@ -36,7 +42,7 @@ const options: Options = {
     },
     {
       name: 'og:image',
-      content: new URL(CARD_IMAGE_PATH, pkg.homepage).toString(),
+      content: getURL(CARD_IMAGE_PATH),
     },
     {
       name: 'twitter:card',
@@ -44,11 +50,11 @@ const options: Options = {
     },
     {
       name: 'twitter:domain',
-      content: new URL(pkg.homepage).hostname,
+      content: new URL(DOMAIN).hostname,
     },
     {
       name: 'twitter:url',
-      content: pkg.homepage,
+      content: getURL(),
     },
     {
       name: 'twitter:title',
@@ -60,7 +66,7 @@ const options: Options = {
     },
     {
       name: 'twitter:image',
-      content: new URL(CARD_IMAGE_PATH, pkg.homepage).toString(),
+      content: getURL(CARD_IMAGE_PATH),
     },
     {
       name: 'robots',

@@ -1,0 +1,60 @@
+name: Test
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test
+
+    env:
+      DEBUG: localhost-screenshot
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x]
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: yarn-deps-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            yarn-deps-${{ hashFiles('yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Run linters
+        run: yarn lint
+
+      - name: Build website
+        run: yarn build
+
+      - name: Create website screenshots (light mode)
+        uses: saschazar21/actions/packages/localhost-screenshot@main
+        with:
+          devices: iPad, iPhone 11, Desktop
+          dist: build
+
+      - name: Create website screenshots (dark mode)
+        uses: saschazar21/actions/packages/localhost-screenshot@main
+        with:
+          dark: true
+          devices: iPad, iPhone 11, Desktop
+          dist: build
+
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v2
+        with:
+          name: screenshots
+          path: /home/runner/work/_temp/_github_home/**.png

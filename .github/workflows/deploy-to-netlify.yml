@@ -1,0 +1,67 @@
+name: Deploy to Netlify
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    env:
+      PROD: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set COMMIT_MESSAGE env
+        run: |
+          if [[ $PROD == 'false' ]]; then
+            SHORT_SHA=$(git rev-parse --short ${{ github.event.after }})
+            echo "COMMIT_MESSAGE=($SHORT_SHA) $(git --no-pager log -1 --pretty=format:"%s" ${{ github.event.after }})" >> $GITHUB_ENV
+          else
+            SHORT_SHA=$(git rev-parse --short $GITHUB_SHA)
+            echo "COMMIT_MESSAGE=($SHORT_SHA) ${{ github.event.head_commit.message }}" >> $GITHUB_ENV
+          fi
+
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: yarn-deps-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            yarn-deps-${{ hashFiles('yarn.lock') }}
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Deploy to Netlify
+        env:
+          ALIAS: ${{ format('pr-{0}', github.event.number) }}
+          PREVIEW_URL: ${{ format('https://pr-{0}--jpeg-butcher-sascha-app.netlify.app', github.event.number) }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: |
+          if [[ $PROD == 'false' ]]; then
+            npx netlify build --context=deploy_preview
+            npx netlify deploy --alias=$ALIAS --message="$COMMIT_MESSAGE"
+          else
+            npx netlify deploy --build --prod --message="$COMMIT_MESSAGE"
+          fi
+
+      - name: Release on GitHub
+        if: ${{ env.PROD == 'true' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
