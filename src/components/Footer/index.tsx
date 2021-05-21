@@ -29,7 +29,11 @@ const Footer = (): JSX.Element => {
           , {FOUNDING_YEAR}
           {currentYear !== FOUNDING_YEAR ? `—${currentYear}` : ''}
         </span>
-        <a href={privacyURL} rel="noindex, nofollow, noreferrer">
+        <a
+          href={privacyURL}
+          target="_blank"
+          rel="noindex, nofollow, noreferrer"
+        >
           Privacy Notice
         </a>
       </section>
