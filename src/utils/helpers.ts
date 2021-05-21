@@ -1,4 +1,4 @@
-export const isProd = import.meta.env.MODE === 'production';
+export const isProd = import.meta.env.PROD;
 
 export const REGEX_HEX = /^[0-9a-f]+$/i;
 
