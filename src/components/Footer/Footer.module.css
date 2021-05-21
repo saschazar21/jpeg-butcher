@@ -9,10 +9,16 @@
 }
 
 .info {
-  flex: 1 0 auto;
+  flex: 1 1 auto;
+}
+
+.info > * {
+  display: block;
+  margin: 0.75rem;
 }
 
 .iconContainer {
+  flex: 1 0 auto;
   margin-top: 1.5rem;
 }
 
@@ -37,5 +43,9 @@
     flex-direction: row;
     margin: 4rem auto;
     text-align: unset;
+  }
+
+  .info > * {
+    display: inline-block;
   }
 }

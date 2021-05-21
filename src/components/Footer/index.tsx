@@ -9,6 +9,8 @@ const FOUNDING_YEAR = 2021;
 
 const Footer = (): JSX.Element => {
   const currentYear = new Date().getFullYear();
+  const privacyURL = new URL('#privacy', pkg.repository.url).toString();
+
   return (
     <footer className={styles.footer} aria-labelledby="footer-headline">
       <section className={styles.info}>
@@ -20,20 +22,23 @@ const Footer = (): JSX.Element => {
           <a
             href={pkg.author.url}
             target="_blank"
-            rel="noindex nofollow noreferrer"
+            rel="noindex, nofollow, noreferrer"
           >
             {pkg.author.name}
           </a>
           , {FOUNDING_YEAR}
           {currentYear !== FOUNDING_YEAR ? `—${currentYear}` : ''}
         </span>
+        <a href={privacyURL} rel="noindex, nofollow, noreferrer">
+          Privacy Notice
+        </a>
       </section>
       <section aria-label="Links" className={styles.iconContainer}>
         <a
           href={pkg.repository.url}
           target="_blank"
           title="Take a look at the source code on GitHub"
-          rel="noindex nofollow noreferrer"
+          rel="noindex, nofollow, noreferrer"
         >
           <GithubIcon className={styles.icon} />
         </a>
