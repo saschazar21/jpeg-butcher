@@ -16,6 +16,8 @@ import ControlsItem from 'components/HexEditor/Controls/ControlsItem';
 import type { JPEGEvents, JPEGState } from 'store';
 import { toHex, validateHex } from 'utils/helpers';
 
+import Worker from '../../worker/get-marker-indexes?worker';
+
 import styles from 'components/HexEditor/HexEditor.module.css';
 
 export const MAX_LENGTH = 384;
@@ -26,12 +28,25 @@ const HexEditor = (): JSX.Element => {
   const inputRef = useRef<HTMLInputElement>();
   const [pressed, setPressed] = useState(false);
   const [invalid, setInvalid] = useState(false);
+  const [markers, setMarkers] = useState<number[]>([]);
   const [selected, setSelected] = useState<number[]>([]);
   const { dispatch, modified } = useStoreon<JPEGState, JPEGEvents>('modified');
   const hexPadding = useMemo(
     () => Math.min(MAX_LENGTH, modified.length).toString(16).length + 1,
     [modified],
   );
+
+  useEffect(() => {
+    const worker = new Worker();
+
+    worker.onmessage = ({ data }: MessageEvent<number[]>) => {
+      console.log(data);
+      setMarkers([...data]);
+      return worker.terminate();
+    };
+
+    worker.postMessage(modified);
+  }, [modified]);
 
   useEffect(() => {
     const [, max] = selected;
@@ -154,6 +169,7 @@ const HexEditor = (): JSX.Element => {
 
     return [...stripped].map((current: number, offset: number) => {
       const isActive = !!(!isNaN(max) && offset >= min && offset <= max);
+      const isMarker = markers.includes(offset) || markers.includes(offset - 1);
       return (
         <Byte
           data-offset={toHex(offset).padStart(hexPadding, '0').toUpperCase()}
@@ -162,6 +178,7 @@ const HexEditor = (): JSX.Element => {
           onHover={handleHover}
           onPressed={handlePressed}
           active={isActive}
+          marker={isMarker}
         >
           {(isActive && value.length
             ? value.padStart(2, '0')
@@ -170,7 +187,7 @@ const HexEditor = (): JSX.Element => {
         </Byte>
       );
     });
-  }, [handleHover, hexPadding, inputRef, invalid, modified, selected]);
+  }, [handleHover, hexPadding, inputRef, invalid, markers, modified, selected]);
 
   return (
     <Selection.Provider value={pressed}>
