@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/saschazar21/jpeg-butcher/compare/v1.0.0...v1.1.0) (2021-05-26)
+
+
+### Features
+
+* added Loading component ([8ff78d4](https://github.com/saschazar21/jpeg-butcher/commit/8ff78d42da787ae0de5a47866c9242031d2edc47))
+* added visual marker display in hex editor ([883bfe8](https://github.com/saschazar21/jpeg-butcher/commit/883bfe85d676817c4a716103e9560cc4668c7723))
+
 # 1.0.0 (2021-05-21)
 
 
