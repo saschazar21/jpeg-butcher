@@ -26,10 +26,6 @@
   color: hsl(var(--color-primary-offset));
 }
 
-.editorByte:hover {
-  background-color: hsl(var(--color-bg-offset), 0.25);
-}
-
 .editorByte:nth-child(8n + 1):after {
   content: attr(data-offset);
   display: block;
@@ -41,7 +37,17 @@
   color: hsl(var(--color-bg-offset));
 }
 
-.active {
+.editorByte.editorByte:hover {
+  background-color: hsl(var(--color-bg-offset), 0.25);
+  color: hsl(var(--color-primary-offset));
+}
+
+.marker.marker {
+  background-color: hsl(var(--color-bg-offset));
+  color: hsl(var(--color-bg));
+}
+
+.active.active {
   animation: var(--noop, ignite) 300ms ease-out;
   background-color: hsl(var(--color-bg-offset), 0.333);
 }

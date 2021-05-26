@@ -1,0 +1,39 @@
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  animation: appear 1s ease-in;
+  position: absolute;
+  display: grid;
+  place-content: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: hsl(var(--color-bg));
+}
+
+.loading > svg {
+  animation: rotate 2s infinite;
+  display: block;
+  margin: 2rem auto;
+  height: 2rem;
+  width: 2rem;
+}

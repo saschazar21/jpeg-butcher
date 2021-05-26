@@ -3,14 +3,17 @@ import { useRef, useState } from 'preact/hooks';
 import classnames from 'classnames';
 import { useStoreon } from 'storeon/preact';
 
-import styles from 'components/Dropzone/Dropzone.module.css';
+import Loading from 'components/Loading';
 import type { JPEGEvents, JPEGState } from 'store';
 import readFile from 'utils/filereader';
+
+import styles from 'components/Dropzone/Dropzone.module.css';
 
 const Dropzone = (): JSX.Element => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [active, setActive] = useState(false);
   const [error, setError] = useState<Error | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
   const { dispatch } = useStoreon<JPEGState, JPEGEvents>('original');
 
   const handleChange = async (e: Event) => {
@@ -53,6 +56,7 @@ const Dropzone = (): JSX.Element => {
     e.preventDefault();
     setActive(false);
     if (e?.dataTransfer) {
+      const timeout = setTimeout(() => setIsLoading(true), 1500);
       const { files } = e.dataTransfer;
 
       try {
@@ -60,6 +64,9 @@ const Dropzone = (): JSX.Element => {
         dispatch('set', data);
       } catch (e) {
         setError(e);
+      } finally {
+        clearTimeout(timeout);
+        setIsLoading(false);
       }
     }
   };
@@ -89,6 +96,7 @@ const Dropzone = (): JSX.Element => {
             drag &amp; drop a JPEG image...
           </span>
         )}
+        {isLoading && <Loading />}
       </div>
       <input
         type="file"

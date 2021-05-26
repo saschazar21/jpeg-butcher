@@ -12,6 +12,7 @@ export type ByteProps = {
   className?: string;
   'data-offset': string;
   invalid: boolean;
+  marker: boolean;
   // eslint-disable-next-line no-unused-vars
   onHover: (offset: number) => void;
   // eslint-disable-next-line no-unused-vars
@@ -24,6 +25,7 @@ const Byte = ({
   className: customClassName,
   'data-offset': dataOffset,
   invalid,
+  marker,
   onHover,
   onPressed,
 }: ByteProps): JSX.Element => {
@@ -37,6 +39,7 @@ const Byte = ({
     {
       [styles.active]: active,
       [styles.invalid]: invalid,
+      [styles.marker]: marker,
     },
   );
 
