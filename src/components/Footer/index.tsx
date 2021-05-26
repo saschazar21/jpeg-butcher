@@ -36,6 +36,13 @@ const Footer = (): JSX.Element => {
         >
           Privacy Notice
         </a>
+        <a
+          href="https://paypal.me/saschazar"
+          target="_blank"
+          rel="noindex, nofollow, noreferrer"
+        >
+          Buy me a beer 🍻
+        </a>
       </section>
       <section aria-label="Links" className={styles.iconContainer}>
         <a
