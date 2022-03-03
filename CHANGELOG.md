@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/saschazar21/jpeg-butcher/compare/v1.1.0...v1.1.1) (2022-03-03)
+
+
+### Bug Fixes
+
+* fixed Header flex value ([de3007f](https://github.com/saschazar21/jpeg-butcher/commit/de3007f4cc87a01d640c26d506d83d39fa402ef1))
+* fixed ImageViewer display for Firefox, Safari ([991718f](https://github.com/saschazar21/jpeg-butcher/commit/991718f555fa4830105df9996f30e077b396b38a))
+
 # [1.1.0](https://github.com/saschazar21/jpeg-butcher/compare/v1.0.0...v1.1.0) (2021-05-26)
 
 
