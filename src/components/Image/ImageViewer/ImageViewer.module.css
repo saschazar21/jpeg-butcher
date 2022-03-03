@@ -1,9 +1,10 @@
 .canvas {
   min-height: 100%;
   max-width: 100%;
+  object-fit: cover;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .canvas {
     position: absolute;
     top: 50%;
