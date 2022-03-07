@@ -24,7 +24,7 @@ const Dropzone = (): JSX.Element => {
         const data = await readFile(files as FileList);
         dispatch('set', data);
       } catch (e) {
-        setError(e);
+        setError(e as Error);
       }
     }
   };
@@ -63,7 +63,7 @@ const Dropzone = (): JSX.Element => {
         const data = await readFile(files);
         dispatch('set', data);
       } catch (e) {
-        setError(e);
+        setError(e as Error);
       } finally {
         clearTimeout(timeout);
         setIsLoading(false);
