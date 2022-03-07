@@ -1,3 +1,11 @@
+## [1.1.2](https://github.com/saschazar21/jpeg-butcher/compare/v1.1.1...v1.1.2) (2022-03-07)
+
+
+### Bug Fixes
+
+* fixed default value for useRef ([3bb0793](https://github.com/saschazar21/jpeg-butcher/commit/3bb07933e6ee746e9c81fe0a72af264b603e5061))
+* fixed error type ([0d60329](https://github.com/saschazar21/jpeg-butcher/commit/0d603299485ff2a1ffd72fc7e8b925583d78a9dc))
+
 ## [1.1.1](https://github.com/saschazar21/jpeg-butcher/compare/v1.1.0...v1.1.1) (2022-03-03)
 
 
