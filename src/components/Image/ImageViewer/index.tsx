@@ -6,7 +6,7 @@ import { ImageContext } from 'utils/context';
 
 const ImageViewer = (): JSX.Element => {
   const dimensions = useContext(ImageContext);
-  const canvasRef = useRef<HTMLCanvasElement>();
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const { current: canvas } = canvasRef;

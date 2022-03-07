@@ -12,7 +12,7 @@ import Worker from '../../worker/extract-dimensions?worker';
 import styles from 'components/Image/Image.module.css';
 
 const Image = (): JSX.Element => {
-  const divRef = useRef<HTMLDivElement>();
+  const divRef = useRef<HTMLDivElement>(null);
   const [isOver, setIsOver] = useState(false);
 
   const [dimensions, setDimensions] = useState<ImageDimensions>({
@@ -68,7 +68,7 @@ const Image = (): JSX.Element => {
       width = 0,
       left = 0,
       top = 0,
-    } = divRef.current?.getBoundingClientRect();
+    } = divRef.current!.getBoundingClientRect();
     return setDimensions((d: ImageDimensions) => ({
       ...d,
       x: ((clientX - left) / width) * (d.width - width) * -1.0,

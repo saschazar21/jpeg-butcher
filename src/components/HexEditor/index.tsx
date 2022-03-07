@@ -25,7 +25,7 @@ export const MAX_LENGTH = 384;
 export const Selection = createContext<boolean>(false);
 
 const HexEditor = (): JSX.Element => {
-  const inputRef = useRef<HTMLInputElement>();
+  const inputRef = useRef<HTMLInputElement>(null);
   const [pressed, setPressed] = useState(false);
   const [invalid, setInvalid] = useState(false);
   const [markers, setMarkers] = useState<number[]>([]);
@@ -40,7 +40,6 @@ const HexEditor = (): JSX.Element => {
     const worker = new Worker();
 
     worker.onmessage = ({ data }: MessageEvent<number[]>) => {
-      console.log(data);
       setMarkers([...data]);
       return worker.terminate();
     };
@@ -94,7 +93,7 @@ const HexEditor = (): JSX.Element => {
             ...modified.slice(firstSelected + 1),
           ]),
         );
-        inputRef.current.value = '';
+        inputRef.current!.value = '';
       }
     };
 
@@ -137,7 +136,7 @@ const HexEditor = (): JSX.Element => {
       default:
         setSelected([firstSelected, firstSelected]);
         if (!validateHex(key)) {
-          inputRef.current.value = value.slice(0, -1);
+          inputRef.current!.value = value.slice(0, -1);
           setInvalid(true);
           return window.setTimeout(() => setInvalid(false), 150) as never;
         }
@@ -208,16 +207,16 @@ const HexEditor = (): JSX.Element => {
         >
           {bytes}
         </div>
+        {selected.length === 2 && (
+          <input
+            type="text"
+            ref={inputRef}
+            className={styles.input}
+            onBlur={handleBlur}
+            onKeyUp={handleKeyUp}
+          />
+        )}
       </div>
-      {selected.length === 2 && (
-        <input
-          type="text"
-          ref={inputRef}
-          className={styles.input}
-          onBlur={handleBlur}
-          onKeyUp={handleKeyUp}
-        />
-      )}
     </Selection.Provider>
   );
 };
